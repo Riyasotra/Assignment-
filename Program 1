@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+void hit_or_miss(int n) {
+    int sum = 0, product = 1, flag = 0;
+
+    while(n != 0) {
+        int digit = n % 10;
+        sum += digit;
+        product *= digit;
+        n /= 10;
+    }
+
+    if(n % sum == 0 || n % product == 0) {
+        printf("Hit\n");
+    } else {
+        printf("Miss\n");
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    hit_or_miss(n);
+    return 0;
+}
